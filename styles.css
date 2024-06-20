@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2bdbe7;
+    margin: 20px;
+}
+
+#quiz-container, #start-screen, #end-screen {
+    text-align: center;
+}
+
+.answer {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#next-button {
+    margin-top: 20px;
+}
+
+#result {
+    margin-top: 20px;
+}
+
