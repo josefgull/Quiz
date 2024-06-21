@@ -1,8 +1,8 @@
 let questions = [];
 let currentQuestion = 0;
 let score = 0;
+let selected = false; // Flag to check if an answer has been selected
 
-// Load questions from the questions.json file
 async function loadQuestions() {
     try {
         const response = await fetch('questions.json');
@@ -15,19 +15,19 @@ async function loadQuestions() {
     }
 }
 
-// Start the quiz by displaying the first question
 function startQuiz() {
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
     loadQuestion();
 }
 
-// Load the current question and its answers
 function loadQuestion() {
     if (questions.length === 0) {
         console.error('Questions not loaded.');
         return;
     }
+
+    selected = false; // Reset the flag for a new question
 
     const questionElement = document.getElementById('question');
     const answerElements = [
@@ -37,22 +37,25 @@ function loadQuestion() {
         document.getElementById('answer3')
     ];
 
-    // Update the question number
     document.getElementById('question-number').textContent = currentQuestion + 1;
 
     questionElement.textContent = questions[currentQuestion].question;
     answerElements.forEach((element, index) => {
         const label = element.querySelector('label');
         label.textContent = questions[currentQuestion].answers[index];
-        element.style.backgroundColor = ''; // Reset background color
-        element.style.color = ''; // Reset text color
+        element.style.backgroundColor = '';
+        element.style.color = '';
+        element.style.pointerEvents = 'auto'; // Re-enable pointer events
     });
 
-    MathJax.typeset(); // Render LaTeX equations using MathJax
+    MathJax.typeset();
 }
 
-// Check if the selected answer is correct
-function checkAnswer(selected) {
+function checkAnswer(selectedAnswer) {
+    if (selected) return; // If an answer is already selected, do nothing
+
+    selected = true; // Set the flag to true to prevent further selections
+
     const resultElement = document.getElementById('result');
     const answerElements = [
         document.getElementById('answer0'),
@@ -63,15 +66,16 @@ function checkAnswer(selected) {
 
     answerElements.forEach((element, index) => {
         if (index === questions[currentQuestion].correct) {
-            element.style.backgroundColor = '#5cb85c'; // Green for correct answer
-            element.style.color = '#fff'; // White text color
+            element.style.backgroundColor = '#5cb85c';
+            element.style.color = '#fff';
         } else {
-            element.style.backgroundColor = '#d9534f'; // Red for incorrect answers
-            element.style.color = '#fff'; // White text color
+            element.style.backgroundColor = '#d9534f';
+            element.style.color = '#fff';
         }
+        element.style.pointerEvents = 'none'; // Disable further clicks
     });
 
-    if (selected === questions[currentQuestion].correct) {
+    if (selectedAnswer === questions[currentQuestion].correct) {
         resultElement.textContent = "Correct!";
         score++;
     } else {
@@ -79,7 +83,6 @@ function checkAnswer(selected) {
     }
 }
 
-// Move to the next question
 function nextQuestion() {
     currentQuestion++;
     if (currentQuestion < questions.length) {
@@ -90,14 +93,12 @@ function nextQuestion() {
     }
 }
 
-// Display the end screen with the score
 function showEndScreen() {
     document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('end-screen').style.display = 'block';
     document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
 }
 
-// Restart the quiz
 function restartQuiz() {
     score = 0;
     currentQuestion = 0;
@@ -105,7 +106,6 @@ function restartQuiz() {
     document.getElementById('start-screen').style.display = 'block';
 }
 
-// Load questions and start the quiz when DOM content is loaded
 document.addEventListener('DOMContentLoaded', async () => {
     await loadQuestions();
     document.getElementById('start-screen').style.display = 'block';
