@@ -1,25 +1,4 @@
-let questions = [
-    {
-        "question": "What is \\( \\int_0^1 x^2 \\, dx \\) ?",
-        "answers": [
-            "\\( \\frac{1}{3} \\)",
-            "\\( \\frac{1}{2} \\)",
-            "\\( \\frac{1}{4} \\)",
-            "\\( \\frac{2}{3} \\)"
-        ],
-        "correct": 0
-    },
-    {
-        "question": "Solve for \\( x \\): \\( x^2 - 4 = 0 \\)",
-        "answers": [
-            "\\( x = 0 \\)",
-            "\\( x = 2 \\)",
-            "\\( x = \\pm 2 \\)",
-            "\\( x = -2 \\)"
-        ],
-        "correct": 2
-    }
-];
+let questions = [];
 let currentQuestion = 0;
 let score = 0;
 
