@@ -1,102 +1,102 @@
 [
     {
-        "question": "Was besagt der Satz von Gauss (Koplex)?",
+        "question": "What is the sum of the complex numbers 3 + 4i and 1 - 2i?",
         "answers": [
-            "Das Wegintegral eines Vektorfeldes entlang eines Weges entspricht dem Kurvenintegral des Gradienten.",
-            "Der Gradient eines Skalarfeldes entspricht dem Potenzial des Feldes.",
-            "Das Wegintegral eines Vektorfeldes entlang einer geschlossenen Kurve entspricht dem Oberflächenintegral der Rotation des Feldes über die Fläche.",
-            "Der Fluss eines Vektorfeldes durch eine geschlossene Fläche entspricht dem Volumenintegral der Divergenz des Feldes innerhalb der Fläche."
+            "4 + 2i",
+            "2 + 6i",
+            "4 + 6i",
+            "2 + 2i"
         ],
-        "correct": 3
+        "correct": 0
     },
     {
-        "question": "Was ist die mathematische Formulierung des Divergenzsatzes?",
+        "question": "What is the product of the complex numbers (1 + i) and (2 - i)?",
         "answers": [
-            "\\( \\oint_{C} \\vec{F} \\cdot d\\vec{r} = \\int_{S} (\\nabla \\times \\vec{F}) \\cdot d\\vec{A} \\)",
-            "\\( \\oint_{S} (\\nabla \\times \\vec{F}) \\cdot d\\vec{A} = 0 \\)",
-            "\\( \\oint_{S} \\vec{F} \\cdot d\\vec{A} = \\int_{V} (\\nabla \\cdot \\vec{F}) \\, dV \\)",
-            "\\( \\int_{V} \\nabla \\cdot \\vec{F} \\, dV = 0 \\)"
+            "3 + i",
+            "2 + i",
+            "1 + 3i",
+            "3 - i"
         ],
-        "correct": 2
+        "correct": 0
     },
     {
-        "question": "Was besagt der Satz von Stokes?",
+        "question": "What is the magnitude of the complex number 3 - 4i?",
         "answers": [
-            "Der Gradient eines Skalarfeldes entspricht dem Potenzial des Feldes.",
-            "Der Fluss eines Vektorfeldes durch eine geschlossene Fläche entspricht dem Volumenintegral der Divergenz des Feldes innerhalb der Fläche.",
-            "Das Wegintegral eines Vektorfeldes entlang eines Weges entspricht dem Kurvenintegral des Gradienten.",
-            "Das Wegintegral eines Vektorfeldes entlang einer geschlossenen Kurve entspricht dem Oberflächenintegral der Rotation des Feldes über die Fläche."
+            "5",
+            "7",
+            "2",
+            "1"
         ],
-        "correct": 3
+        "correct": 0
     },
     {
-        "question": "Was ist die mathematische Formulierung des Satzes von Stokes?",
+        "question": "Find the complex conjugate of the number 7 + 6i.",
         "answers": [
-            "\\( \\int_{V} \\nabla \\cdot \\vec{F} \\, dV = 0 \\)",
-            "\\( \\oint_{S} \\vec{F} \\cdot d\\vec{A} = \\int_{V} (\\nabla \\cdot \\vec{F}) \\, dV \\)",
-            "\\( \\oint_{C} (\\nabla \\cdot \\vec{F}) \\cdot d\\vec{r} = 0 \\)",
-            "\\( \\oint_{C} \\vec{F} \\cdot d\\vec{r} = \\int_{S} (\\nabla \\times \\vec{F}) \\cdot d\\vec{A} \\)"
+            "7 - 6i",
+            "7 + 6i",
+            "-7 + 6i",
+            "-7 - 6i"
         ],
-        "correct": 3
+        "correct": 0
     },
     {
-        "question": "Welcher Satz kann verwendet werden, um ein Oberflächenintegral in ein Volumenintegral zu verwandeln?",
+        "question": "What is the result of dividing the complex number 4 + 3i by 1 - 2i?",
         "answers": [
-            "Satz von Stokes",
-            "Fundamentalsatz der Analysis",
-            "Divergenzsatz",
-            "Satz von Green"
+            "-2 + 1i",
+            "2 + 1i",
+            "1 + 2i",
+            "2 - 1i"
         ],
-        "correct": 2
+        "correct": 0
     },
     {
-        "question": "Welcher Satz kann verwendet werden, um ein Wegintegral in ein Oberflächenintegral zu verwandeln?",
+        "question": "What is the argument (angle) of the complex number -1 + i?",
         "answers": [
-            "Satz von Green",
-            "Satz von Stokes",
-            "Divergenzsatz",
-            "Fundamentalsatz der Analysis"
+            "3π/4",
+            "π/4",
+            "π/2",
+            "π"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Express the complex number 1 + √3i in polar form.",
+        "answers": [
+            "2 (cos(π/3) + i sin(π/3))",
+            "2 (cos(π/6) + i sin(π/6))",
+            "2 (cos(π/4) + i sin(π/4))",
+            "2 (cos(π/2) + i sin(π/2))"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the real part of the complex number 5 - 2i?",
+        "answers": [
+            "5",
+            "-2",
+            "3",
+            "7"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Solve the equation z^2 = -1 for complex numbers z.",
+        "answers": [
+            "±i",
+            "±1",
+            "±2i",
+            "±√2"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the complex number that satisfies the equation z + 2i = 3 - i?",
+        "answers": [
+            "3 - 3i",
+            "1 - 3i",
+            "3 - i",
+            "1 + i"
         ],
         "correct": 1
-    },
-    {
-        "question": "Im Kontext des Satzes von Stokes, was repräsentiert \\( \\vec{F} \\cdot d\\vec{r} \\)?",
-        "answers": [
-            "Den Fluss des Vektorfeldes \\( \\vec{F} \\) durch die Fläche \\( S \\)",
-            "Die Rotation des Vektorfeldes \\( \\vec{F} \\) über die Fläche \\( S \\)",
-            "Das Wegintegral des Vektorfeldes \\( \\vec{F} \\) entlang der Kurve \\( C \\)",
-            "Die Divergenz des Vektorfeldes \\( \\vec{F} \\) im Volumen \\( V \\)"
-        ],
-        "correct": 2
-    },
-    {
-        "question": "Im Kontext des Divergenzsatzes, was repräsentiert \\( \\nabla \\cdot \\vec{F} \\)?",
-        "answers": [
-            "Das Wegintegral des Vektorfeldes \\( \\vec{F} \\)",
-            "Den Gradient des Vektorfeldes \\( \\vec{F} \\)",
-            "Die Divergenz des Vektorfeldes \\( \\vec{F} \\)",
-            "Die Rotation des Vektorfeldes \\( \\vec{F} \\)"
-        ],
-        "correct": 2
-    },
-    {
-        "question": "Welches Integral wird im Divergenzsatz verwendet?",
-        "answers": [
-            "Kurvenintegral des Skalarfeldes",
-            "Volumenintegral der Divergenz",
-            "Wegintegral des Vektorfeldes",
-            "Oberflächenintegral der Rotation"
-        ],
-        "correct": 1
-    },
-    {
-        "question": "Welches Integral wird im Satz von Stokes verwendet?",
-        "answers": [
-            "Wegintegral des Skalarfeldes",
-            "Kurvenintegral des Gradienten",
-            "Oberflächenintegral der Rotation",
-            "Volumenintegral der Divergenz"
-        ],
-        "correct": 2
     }
 ]

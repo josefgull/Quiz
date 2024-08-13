@@ -1,34 +1,25 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #2bdbe7;
-    margin: 20px;
+    margin: 0; /* Reset margin to prevent unintended spacing */
+    padding: 0; /* Reset padding to prevent unintended spacing */
+    height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Optional: center vertically if needed */
 }
 
-#quiz-container, #start-screen, #end-screen {
-    text-align: center;
+#quiz-container {
+    text-align: center; /* Center text and inline elements */
 }
 
-.answer {
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: inline-block;
-    width: 200px;
+.button-container {
+    display: flex;
+    justify-content: center; /* Center button horizontally */
+    /* No need for height if you only want to center horizontally */
 }
 
 button {
     padding: 10px 20px;
-    margin-top: 20px;
     cursor: pointer;
 }
-
-#next-button {
-    margin-top: 20px;
-}
-
-#result {
-    margin-top: 20px;
-}
-

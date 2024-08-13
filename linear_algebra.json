@@ -1,102 +1,102 @@
 [
     {
-        "question": "Was besagt der Satz von Gauss (lin)?",
+        "question": "Let v1 = [1, 2] and v2 = [3, 4]. Are v1 and v2 linearly independent?",
         "answers": [
-            "Das Wegintegral eines Vektorfeldes entlang eines Weges entspricht dem Kurvenintegral des Gradienten.",
-            "Der Gradient eines Skalarfeldes entspricht dem Potenzial des Feldes.",
-            "Das Wegintegral eines Vektorfeldes entlang einer geschlossenen Kurve entspricht dem Oberflächenintegral der Rotation des Feldes über die Fläche.",
-            "Der Fluss eines Vektorfeldes durch eine geschlossene Fläche entspricht dem Volumenintegral der Divergenz des Feldes innerhalb der Fläche."
-        ],
-        "correct": 3
-    },
-    {
-        "question": "Was ist die mathematische Formulierung des Divergenzsatzes?",
-        "answers": [
-            "\\( \\oint_{C} \\vec{F} \\cdot d\\vec{r} = \\int_{S} (\\nabla \\times \\vec{F}) \\cdot d\\vec{A} \\)",
-            "\\( \\oint_{S} (\\nabla \\times \\vec{F}) \\cdot d\\vec{A} = 0 \\)",
-            "\\( \\oint_{S} \\vec{F} \\cdot d\\vec{A} = \\int_{V} (\\nabla \\cdot \\vec{F}) \\, dV \\)",
-            "\\( \\int_{V} \\nabla \\cdot \\vec{F} \\, dV = 0 \\)"
-        ],
-        "correct": 2
-    },
-    {
-        "question": "Was besagt der Satz von Stokes?",
-        "answers": [
-            "Der Gradient eines Skalarfeldes entspricht dem Potenzial des Feldes.",
-            "Der Fluss eines Vektorfeldes durch eine geschlossene Fläche entspricht dem Volumenintegral der Divergenz des Feldes innerhalb der Fläche.",
-            "Das Wegintegral eines Vektorfeldes entlang eines Weges entspricht dem Kurvenintegral des Gradienten.",
-            "Das Wegintegral eines Vektorfeldes entlang einer geschlossenen Kurve entspricht dem Oberflächenintegral der Rotation des Feldes über die Fläche."
-        ],
-        "correct": 3
-    },
-    {
-        "question": "Was ist die mathematische Formulierung des Satzes von Stokes?",
-        "answers": [
-            "\\( \\int_{V} \\nabla \\cdot \\vec{F} \\, dV = 0 \\)",
-            "\\( \\oint_{S} \\vec{F} \\cdot d\\vec{A} = \\int_{V} (\\nabla \\cdot \\vec{F}) \\, dV \\)",
-            "\\( \\oint_{C} (\\nabla \\cdot \\vec{F}) \\cdot d\\vec{r} = 0 \\)",
-            "\\( \\oint_{C} \\vec{F} \\cdot d\\vec{r} = \\int_{S} (\\nabla \\times \\vec{F}) \\cdot d\\vec{A} \\)"
-        ],
-        "correct": 3
-    },
-    {
-        "question": "Welcher Satz kann verwendet werden, um ein Oberflächenintegral in ein Volumenintegral zu verwandeln?",
-        "answers": [
-            "Satz von Stokes",
-            "Fundamentalsatz der Analysis",
-            "Divergenzsatz",
-            "Satz von Green"
-        ],
-        "correct": 2
-    },
-    {
-        "question": "Welcher Satz kann verwendet werden, um ein Wegintegral in ein Oberflächenintegral zu verwandeln?",
-        "answers": [
-            "Satz von Green",
-            "Satz von Stokes",
-            "Divergenzsatz",
-            "Fundamentalsatz der Analysis"
+            "Yes, v1 and v2 are linearly independent.",
+            "No, v1 and v2 are linearly dependent.",
+            "Not enough information to determine.",
+            "v1 and v2 are orthogonal."
         ],
         "correct": 1
     },
     {
-        "question": "Im Kontext des Satzes von Stokes, was repräsentiert \\( \\vec{F} \\cdot d\\vec{r} \\)?",
+        "question": "Compute the product of the following matrices:\n\nA = [[1, 2], [3, 4]]\nB = [[5, 6], [7, 8]]",
         "answers": [
-            "Den Fluss des Vektorfeldes \\( \\vec{F} \\) durch die Fläche \\( S \\)",
-            "Die Rotation des Vektorfeldes \\( \\vec{F} \\) über die Fläche \\( S \\)",
-            "Das Wegintegral des Vektorfeldes \\( \\vec{F} \\) entlang der Kurve \\( C \\)",
-            "Die Divergenz des Vektorfeldes \\( \\vec{F} \\) im Volumen \\( V \\)"
+            "[[19, 22], [43, 50]]",
+            "[[23, 34], [31, 46]]",
+            "[[17, 23], [39, 54]]",
+            "[[29, 40], [67, 92]]"
         ],
-        "correct": 2
+        "correct": 0
     },
     {
-        "question": "Im Kontext des Divergenzsatzes, was repräsentiert \\( \\nabla \\cdot \\vec{F} \\)?",
+        "question": "Find the determinant of the matrix:\n\nM = [[2, 3, 1], [4, 1, 5], [7, 6, 8]]",
         "answers": [
-            "Das Wegintegral des Vektorfeldes \\( \\vec{F} \\)",
-            "Den Gradient des Vektorfeldes \\( \\vec{F} \\)",
-            "Die Divergenz des Vektorfeldes \\( \\vec{F} \\)",
-            "Die Rotation des Vektorfeldes \\( \\vec{F} \\)"
+            "0",
+            "-1",
+            "7",
+            "9"
         ],
-        "correct": 2
+        "correct": 3
     },
     {
-        "question": "Welches Integral wird im Divergenzsatz verwendet?",
+        "question": "Find the eigenvalues of the matrix:\n\nA = [[4, 1], [2, 3]]",
         "answers": [
-            "Kurvenintegral des Skalarfeldes",
-            "Volumenintegral der Divergenz",
-            "Wegintegral des Vektorfeldes",
-            "Oberflächenintegral der Rotation"
+            "2, 5",
+            "1, 6",
+            "3, 4",
+            "2, 3"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Find the inverse of the matrix (if it exists):\n\nB = [[1, 2], [3, 4]]",
+        "answers": [
+            "[[-2, 1], [1.5, -0.5]]",
+            "[[1.5, -1], [-1, 0.5]]",
+            "[[2, -1], [-1.5, 0.5]]",
+            "[[-1, 0.5], [0.75, -0.25]]"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Determine the rank of the matrix:\n\nC = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "answers": [
+            "1",
+            "2",
+            "3",
+            "0"
         ],
         "correct": 1
     },
     {
-        "question": "Welches Integral wird im Satz von Stokes verwendet?",
+        "question": "Consider the linear transformation T given by:\n\nT(x) = A x\n\nwhere A = [[2, 0], [0, 3]]. What is the image of the vector x = [1, 2]?",
         "answers": [
-            "Wegintegral des Skalarfeldes",
-            "Kurvenintegral des Gradienten",
-            "Oberflächenintegral der Rotation",
-            "Volumenintegral der Divergenz"
+            "[[2, 6]]",
+            "[[2, 6]]",
+            "[[2, 4]]",
+            "[[4, 6]]"
         ],
-        "correct": 2
+        "correct": 1
+    },
+    {
+        "question": "Solve the following system of linear equations:\n\nx + 2y = 3\n3x - y = 4",
+        "answers": [
+            "x = 2, y = -1",
+            "x = 1, y = 1",
+            "x = 2, y = 0",
+            "x = 1, y = 2"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Given vectors u = [1, 0] and v = [0, 1], show that u and v are orthogonal.",
+        "answers": [
+            "Yes, because their dot product is 0.",
+            "No, because their dot product is 1.",
+            "Yes, because their magnitudes are equal.",
+            "No, because they are not parallel."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Find the least squares solution to the overdetermined system:\n\nA = [[1, 1], [2, 2], [3, 3]]\n\nb = [1, 2, 3]",
+        "answers": [
+            "[[1], [1]]",
+            "[[0.5], [0.5]]",
+            "[[0.5], [1.5]]",
+            "[[1], [0]]"
+        ],
+        "correct": 1
     }
 ]
