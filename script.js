@@ -42,7 +42,7 @@ function loadQuestion() {
     document.getElementById('question-container').style.display = 'block';
     document.getElementById('next-button').style.display = 'none'; // Hide Next button initially
 
-    questionElement.textContent = `Question ${currentQuestion + 1}: ${questions[currentQuestion].question}`;
+    questionElement.textContent = `Q ${currentQuestion + 1}: ${questions[currentQuestion].question}`;
     answerElements.forEach((element, index) => {
         const label = element.querySelector('label');
         label.textContent = questions[currentQuestion].answers[index];
@@ -102,6 +102,9 @@ function showEndScreen() {
     document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('end-screen').style.display = 'block';
     document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}.`;
+    if (score === 10) {
+        document.getElementById('congrats-gif').style.display = 'block';
+    }
 }
 
 function restartQuiz() {
