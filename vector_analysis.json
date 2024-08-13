@@ -1,6 +1,6 @@
 [
     {
-        "question": "Was besagt der Satz von Gauss (Divergenzsatz)?",
+        "question": "Was besagt der Satz von Gauss (va)?",
         "answers": [
             "Das Wegintegral eines Vektorfeldes entlang eines Weges entspricht dem Kurvenintegral des Gradienten.",
             "Der Gradient eines Skalarfeldes entspricht dem Potenzial des Feldes.",

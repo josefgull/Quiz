@@ -3,22 +3,24 @@ let currentQuestion = 0;
 let score = 0;
 let selected = false; // Flag to check if an answer has been selected
 
-async function loadQuestions() {
+async function loadQuestions(topic) {
     try {
-        const response = await fetch('questions.json');
+        const response = await fetch(`${topic}.json`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         questions = await response.json();
+        loadQuestion();
     } catch (error) {
         console.error('Error loading questions:', error);
     }
 }
 
-function startQuiz() {
+function startQuiz(topic) {
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
-    loadQuestion();
+    document.getElementById('quiz-title').textContent = `Quiz: ${topic.replace('_', ' ')}`;
+    loadQuestions(topic);
 }
 
 function loadQuestion() {
@@ -37,13 +39,14 @@ function loadQuestion() {
         document.getElementById('answer3')
     ];
 
-    document.getElementById('question-number').textContent = currentQuestion + 1;
+    document.getElementById('question-container').style.display = 'block';
+    document.getElementById('next-button').style.display = 'none'; // Hide Next button initially
 
-    questionElement.textContent = questions[currentQuestion].question;
+    questionElement.textContent = `Question ${currentQuestion + 1}: ${questions[currentQuestion].question}`;
     answerElements.forEach((element, index) => {
         const label = element.querySelector('label');
         label.textContent = questions[currentQuestion].answers[index];
-        element.style.backgroundColor = '';
+        element.style.backgroundColor = ''; // Reset color
         element.style.color = '';
         element.style.pointerEvents = 'auto'; // Re-enable pointer events
     });
@@ -81,6 +84,8 @@ function checkAnswer(selectedAnswer) {
     } else {
         resultElement.textContent = "Wrong answer.";
     }
+
+    document.getElementById('next-button').style.display = 'block'; // Show Next button
 }
 
 function nextQuestion() {
@@ -96,7 +101,7 @@ function nextQuestion() {
 function showEndScreen() {
     document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('end-screen').style.display = 'block';
-    document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
+    document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}.`;
 }
 
 function restartQuiz() {
@@ -104,9 +109,5 @@ function restartQuiz() {
     currentQuestion = 0;
     document.getElementById('end-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'block';
+    document.getElementById('quiz-container').style.display = 'none';
 }
-
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadQuestions();
-    document.getElementById('start-screen').style.display = 'block';
-});

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>Edyn Quiz (math)</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -16,18 +16,22 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        #start-screen, #quiz-container, #end-screen {
+        #quiz-container, #end-screen {
             display: none;
         }
     </style>
 </head>
 <body>
     <div id="start-screen">
-        <h1>Welcome to the Quiz</h1>
-        <button onclick="startQuiz()">Start Quiz</button>
+        <h1>Welcome to the Edyn Quiz (math)</h1>
+        <h3>Select a topic:</h3>
+        <button onclick="startQuiz('linear_algebra')">Linear Algebra</button>
+        <button onclick="startQuiz('complex_numbers')">Complex Numbers</button>
+        <button onclick="startQuiz('vector_analysis')">Vector Analysis</button>
     </div>
+    
     <div id="quiz-container">
-        <h1>Question Number: <span id="question-number"></span></h1>
+        <h1 id="quiz-title"></h1>
         <div id="question-container">
             <p id="question"></p>
             <div class="answer" onclick="checkAnswer(0)" id="answer0">
@@ -46,6 +50,7 @@
         <button id="next-button" onclick="nextQuestion()">Next</button>
         <p id="result"></p>
     </div>
+    
     <div id="end-screen">
         <h1>Quiz Completed</h1>
         <p id="score"></p>
