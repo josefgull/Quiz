@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Preview</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        .question { font-weight: bold; margin-top: 1.5em; }
+        .answers { list-style-type: none; padding: 0; }
+        .answers li { margin: 0.5em 0; }
+        .correct { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>Questions and Answers</h1>
+
+<!-- File input to select JSON file -->
+<input type="file" id="jsonFileInput" accept=".json">
+<div id="qa-container"></div>
+
+<script>
+document.getElementById("jsonFileInput").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                renderQA(data);
+                MathJax.typeset();  // Render math after loading data
+            } catch (error) {
+                alert("Error reading JSON file: " + error.message);
+            }
+        };
+        
+        reader.readAsText(file);
+    }
+});
+
+function renderQA(data) {
+    const qaContainer = document.getElementById("qa-container");
+    qaContainer.innerHTML = "";  // Clear previous content
+
+    data.forEach((item, index) => {
+        // Create question element
+        const questionEl = document.createElement("div");
+        questionEl.className = "question";
+        questionEl.innerHTML = `Question ${index + 1}: ${item.question}`;
+        
+        // Create answers list
+        const answersList = document.createElement("ul");
+        answersList.className = "answers";
+        
+        item.answers.forEach((answer, i) => {
+            const answerEl = document.createElement("li");
+            answerEl.innerHTML = `(${String.fromCharCode(97 + i)}) ${answer}`;
+            answersList.appendChild(answerEl);
+        });
+
+        // Highlight the correct answer
+        const correctAnswerEl = document.createElement("div");
+        correctAnswerEl.className = "correct";
+        correctAnswerEl.textContent = `Correct Answer: (${String.fromCharCode(97 + item.correct)})`;
+        
+        // Append elements to the container
+        qaContainer.appendChild(questionEl);
+        qaContainer.appendChild(answersList);
+        qaContainer.appendChild(correctAnswerEl);
+    });
+}
+</script>
+
+</body>
+</html>
